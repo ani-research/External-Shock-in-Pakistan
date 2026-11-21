@@ -34,7 +34,7 @@ comparable in units or magnitude.
 
 The empirical analysis uses the World Bank's World Development
 Indicators (WDI). The downloaded source file is retained as
-`data_handling/WDI_Data_Raw.csv` and is not overwritten by the notebook.
+`WDI_Data_Raw.csv` and is not overwritten by the notebook.
 
   ------------------------------------------------------------------------
   Indicator               WDI series code          Unit
