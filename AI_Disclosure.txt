@@ -1,0 +1,6 @@
+### AI Use Disclosure
+
+OpenAI's ChatGPT (GPT-6 Luna) was used as an assistance tool during the preparation of this project. Its use was primarily to save time in generating Python code for Matplotlib visualisations, simple code was provided to ChatGPT and it was asked to beautify the graphs. The generated codes were verified by the author, it was made sure that the data used to make the graphs was correct. 
+ChatGPT was also used in developing code to reproduce Dynare-related analyses in Python, the lines of code were deconstructed using ChatGPT itself, it was made sure the codes made logical sense. 
+ChatGPT was also used to prepare the project's README file to document the project structure, software requirements and execution procedures. 
+All generated code and outputs were reviewed and incorporated into the project by the author.

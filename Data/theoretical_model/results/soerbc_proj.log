@@ -1,0 +1,140 @@
+Starting Dynare (version 7.2).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ... 
+WARNING: Parameter(s) r_ss ky iy cy h_ss y_ss k_ss c_ss i_ss w_ss  not used in the model 
+Found 13 equation(s). 
+Evaluating expressions... 
+Computing static model derivatives (order 1). 
+Normalizing the static model... 
+Finding the optimal block decomposition of the static model... 
+5 block(s) found: 
+  4 recursive block(s) and 1 simultaneous block(s). 
+  the largest simultaneous block has 9 equation(s) 
+                                 and 9 feedback variable(s). 
+Computing dynamic model derivatives (order 1). 
+Normalizing the dynamic model... 
+Normalization failed with cutoff, trying symbolic normalization... 
+Could not normalize the dynamic model, i.e. it was not possible to construct a one-to-one matching between variables and equations. More precisely, variable i could not be associated to an equation (either it appears nowhere, or the equations in which it appears had to be matched with other variables that appear nowhere else). 
+Preprocessing completed. 
+Preprocessing time: 0h00m00s.
+
+
+Residuals of the static equations:
+All residuals are zero
+
+
+
+STEADY-STATE RESULTS:
+
+y  		 1.67094
+c  		 1.28503
+i  		 0.385907
+k  		 6.43178
+h  		 0.808649
+w  		 1.34312
+r  		 0.0909278
+z  		 1
+b  		 0
+rb 		 0.0309278
+ca 		 0
+tb 		 -0
+rp 		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+       2.731e-15        2.731e-15                0
+           0.933            0.933                0
+            0.95             0.95                0
+            0.95             0.95                0
+           1.105            1.105                0
+       3.557e+13        3.557e+13                0
+             Inf              Inf                0
+
+There are 3 eigenvalue(s) larger than 1 in modulus for 3 forward-looking variable(s).
+The order and rank conditions are verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         13
+  Number of stochastic shocks: 2
+  Number of state variables:   4
+  Number of jumpers:           3
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables       eps_z    eps_rp
+eps_z        0.000100  0.000000
+eps_rp       0.000000  0.000100
+
+POLICY AND TRANSITION FUNCTIONS
+                                   y               c               i               k               h               b              ca              tb              rb              rp
+Constant                    1.670937        1.285030        0.385907        6.431781        0.808649               0               0               0        0.030928               0
+k(-1)                       0.087484        0.088574       -0.477039        0.462961       -0.002564        0.475949        0.475949        0.475949               0               0
+z(-1)                       1.678491        0.727549        5.159931        5.159931        0.067828       -4.208988       -4.208988       -4.208988               0               0
+b(-1)                      -0.016157        0.087478        0.457232        0.457232       -0.012030        0.470060       -0.529940       -0.560868       -0.010000               0
+rp(-1)                      0.675642       -3.657997      -44.765527      -44.765527        0.503041       49.099166       49.099166       49.099166        0.950000        0.950000
+eps_z                       1.766833        0.765841        5.431506        5.431506        0.071398       -4.430514       -4.430514       -4.430514               0               0
+eps_rp                      0.711202       -3.850523      -47.121608      -47.121608        0.529517       51.683333       51.683333       51.683333        1.000000        1.000000
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+y              1.6709     0.1358     0.0185
+c              1.2850     0.1054     0.0111
+i              0.3859     0.4763     0.2269
+k              6.4318     1.1622     1.3508
+h              0.8086     0.0114     0.0001
+b              0.0000     2.2063     4.8677
+ca             0.0000     0.5229     0.2735
+tb            -0.0000     0.5353     0.2866
+rb             0.0309     0.0142     0.0002
+rp             0.0000     0.0320     0.0010
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+       eps_z  eps_rp
+y      37.23   62.77
+c      26.80   73.20
+i       1.42   98.58
+k       7.94   92.06
+h       4.54   95.46
+b       0.31   99.69
+ca      0.82   99.18
+tb      0.81   99.19
+rb      0.75   99.25
+rp      0.00  100.00
+
+
+
+MATRIX OF CORRELATIONS
+Variables          y        c        i        k        h        b       ca       tb       rb       rp
+y             1.0000   0.5943  -0.0810   0.8275   0.4422  -0.6594   0.1239   0.2088  -0.5130  -0.7017
+c             0.5943   1.0000   0.3654   0.7064  -0.4586  -0.1034  -0.3818  -0.3713  -0.6288  -0.2873
+i            -0.0810   0.3654   1.0000   0.3469  -0.4971  -0.1561  -0.9951  -0.9822  -0.6431  -0.2298
+k             0.8275   0.7064   0.3469   1.0000   0.1265  -0.7757  -0.3343  -0.2378  -0.9040  -0.8801
+h             0.4422  -0.4586  -0.4971   0.1265   1.0000  -0.6133   0.5626   0.6448   0.1345  -0.4549
+b            -0.6594  -0.1034  -0.1561  -0.7757  -0.6133   1.0000   0.1185  -0.0081   0.6937   0.9768
+ca            0.1239  -0.3818  -0.9951  -0.3343   0.5626   0.1185   1.0000   0.9920   0.6497   0.2060
+tb            0.2088  -0.3713  -0.9822  -0.2378   0.6448  -0.0081   0.9920   1.0000   0.5659   0.0830
+rb           -0.5130  -0.6288  -0.6431  -0.9040   0.1345   0.6937   0.6497   0.5659   1.0000   0.8147
+rp           -0.7017  -0.2873  -0.2298  -0.8801  -0.4549   0.9768   0.2060   0.0830   0.8147   1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order           1        2        3        4        5
+y          0.9196   0.8591   0.8025   0.7497   0.7004
+c          0.9236   0.8528   0.7872   0.7264   0.6701
+i         -0.0189  -0.0178  -0.0167  -0.0157  -0.0148
+k          0.9126   0.8320   0.7579   0.6896   0.6268
+h          0.7804   0.7606   0.7404   0.7201   0.6997
+b          0.9719   0.9438   0.9156   0.8877   0.8599
+ca         0.0011  -0.0007  -0.0023  -0.0037  -0.0049
+tb         0.0169   0.0147   0.0126   0.0108   0.0091
+rb         0.6684   0.6028   0.5426   0.4874   0.4369
+rp         0.9500   0.9025   0.8574   0.8145   0.7738
+Total computing time : 0h00m03s
+Note: 1 warning(s) encountered in the preprocessor

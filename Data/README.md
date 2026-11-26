@@ -22,12 +22,29 @@ comparable in units or magnitude.
 ## Repository structure
 
 ``` text
+/
+|-- Report
+|-- Data
+|   |-- README.md
+|   | 
+|   |-- data_handling/
+|   |-- pakistan_data_analysis.ipynb
+|   `-- WDI_Data_Raw.csv
+|
+    |`-- theoretical_model/
+        |-- soerbc_proj.mod
+    `-- results/
+        |-- soerbc_proj.log
+        |-- soerbc_proj_results.mat
+        `-- IRF_Graphs/
+            |-- rho_0.40/
+            |-- rho_0.80/
+            `-- rho_0.95/
+```
 
--- pakistan_data_analysis.ipynb
--- WDI_Data_Raw.csv
--- soerbc_proj.mod
+The `IRF_Graphs` subfolders contain the saved impulse-response figures
+for the three risk-premium persistence experiments.
 
-``` 
 ## Data
 
 ### Source and indicators
@@ -65,7 +82,7 @@ calendar-year and Pakistan fiscal-year observations.
 
 All data preparation, transformations, calculations, tables and
 empirical graphs are performed in
- `Pakistan_data_analysis.ipynb`. No separate transformed
+`data_handling/pakistan_data_analysis.ipynb`. No separate transformed
 CSV is required for the submitted workflow. The original WDI CSV remains
 unchanged.
 
@@ -82,6 +99,7 @@ The project was developed and run using the following software versions:
   Operating system     Windows (development environment)
   Python               3.14.2
   pandas               2.3.3
+  gEconpy              2.4.0
   NumPy                2.5.1
   Matplotlib           3.11.1
   MATLAB               R2025b
@@ -108,7 +126,7 @@ Select this `.venv` as the Python kernel in VS Code or Jupyter.
 ### Running the empirical analysis
 
 1.  Open the repository.
-2.  Open `pakistan_data_analysis.ipynb`.
+2.  Open `data_handling/pakistan_data_analysis.ipynb`.
 3.  Select the project `.venv` kernel.
 4.  Restart the kernel and run all cells from top to bottom.
 
@@ -124,7 +142,7 @@ in the analysis. The original raw data file should not be edited.
 
 ### Model file
 
-The model specification is `soerbc_proj.mod`. It is a
+The model specification is `theoretical_model/soerbc_proj.mod`. It is a
 Dynare model file and is run from MATLAB using Dynare.
 
 The current submitted model specification has:
@@ -132,6 +150,12 @@ The current submitted model specification has:
 ``` matlab
 rho_rp = 0.95;
 ```
+
+The accompanying `soerbc_proj.log` and `soerbc_proj_results.mat` are the
+saved outputs associated with the current 0.95 specification. They
+should not be interpreted as containing the numerical results for all
+three persistence experiments. The three sets of IRF figures are
+archived separately under `results/IRF_Graphs/`.
 
 ### Running the model
 
@@ -156,14 +180,37 @@ persistence parameter of the risk-premium process, `rho_rp`, was changed
 between runs. The shock standard deviation and all other model
 parameters were held fixed.
 
+  Experiment           `rho_rp`   IRF horizon
+  ------------------ ---------- -------------
+  Low persistence          0.40    20 periods
+  Baseline                 0.80    20 periods
+  High persistence         0.95    60 periods
+
 To reproduce an experiment:
 
-1.  Open `soerbc_proj.mod`.
+1.  Open `theoretical_model/soerbc_proj.mod`.
 2.  Set `rho_rp` to the desired value in the table.
 3.  Save the `.mod` file.
 4.  Run `dynare soerbc_proj.mod` from MATLAB with `theoretical_model` as
     the Current Folder.
+5.  Save the generated IRF figures in the corresponding
+    `theoretical_model/results/IRF_Graphs/rho_0.40/`, `rho_0.80/` or
+    `rho_0.95/` folder.
 
+The submitted `.mod` file is currently set to `rho_rp = 0.95`. To
+reproduce the 0.40 and 0.80 experiments, change this parameter before
+running Dynare. The 0.95 experiment uses a 60-period horizon to make the
+persistence of the response easier to examine; the other two experiments
+use 20 periods.
+
+The saved figures are the archived visual outputs for each experiment.
+The `.log` and `.mat` files in the results directory correspond to the
+current submitted 0.95 model specification, not necessarily to every
+alternative-persistence run.
+
+## Verification
+
+Verification was done using gEconpy version 2.4.0 to reproduce Dynare output
 
 ## Reproducibility notes
 

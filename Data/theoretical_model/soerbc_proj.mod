@@ -34,7 +34,7 @@ alpha   = 0.35;
 beta    = 0.97;
 delta   = 0.06;
 gamma   = 0.20;
-rho_z   = 0.80;
+rho_z   = 0.95;
 
 // World real interest rate chosen to satisfy the bond Euler equation
 rstar   = 1/beta - 1;
@@ -44,7 +44,7 @@ phi_b   = 0.01;
 bbar    = 0;
 
 // Persistence of the exogenous risk-premium shock
-rho_rp  = 0.80;
+rho_rp  = 0.95;
 
 // ----------------------------------------------------------------
 // Closed-economy-equivalent steady state when bbar = 0
@@ -140,5 +140,5 @@ end;
 // ----------------------------------------------------------------
 // First-order stochastic simulation and impulse responses
 // ----------------------------------------------------------------
-stoch_simul(order=1, irf=20) y c i k h b ca tb rb rp;
+stoch_simul(order=1, irf=60) y c i k h b ca tb rb rp;
 
